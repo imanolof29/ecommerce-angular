@@ -1,4 +1,7 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
+import { ActivatedRoute, Params } from "@angular/router";
+import { Product } from "../model/product";
+import { ProductsService } from "../products.service";
 
 
 @Component({
