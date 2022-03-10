@@ -1,10 +1,19 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
+import { Observable } from "rxjs";
+import { AuthService } from "src/app/auth/service/auth.service";
 
 @Component({
-    selector: 'app-header',
+    selector: 'header',
     templateUrl: './header.component.html',
     styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent{
+export class HeaderComponent implements OnInit{
+    isAuthenticated!:boolean;
 
+    constructor(private authService:AuthService){}
+
+    ngOnInit(): void {
+        this.isAuthenticated=true
+        //this.isAuthenticated = this.authService.isAuthenticated()
+    }
 }

@@ -1,8 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
-import { LoginRequest } from "./model/login-request";
-import { LoginResponse } from "./model/login-response";
+import { LoginRequest } from "../model/login-request";
 
 
 
@@ -13,7 +12,7 @@ export class AuthService{
     constructor(private http:HttpClient){}
 
     login(loginRequest:LoginRequest){
-        return this.http.post<LoginRequest>('', loginRequest)
+        return this.http.post<LoginRequest>('http://localhost:8000/api/auth/token/', loginRequest)
     }
     
 

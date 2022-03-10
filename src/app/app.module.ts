@@ -10,6 +10,8 @@ import { DetailsComponent } from './products/details/details.component';
 import { ProductsComponent } from './products/products.component';
 import { FooterComponent } from './shared/layout/footer/footer.component';
 import { HeaderComponent } from './shared/layout/header/header.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { OrdersComponent } from './products/orders/orders.component';
 
 @NgModule({
   declarations: [
@@ -19,13 +21,16 @@ import { HeaderComponent } from './shared/layout/header/header.component';
     //borrar luego
     LoginComponent,
     ProductsComponent,
-    DetailsComponent
+    DetailsComponent,
+    OrdersComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     AuthModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

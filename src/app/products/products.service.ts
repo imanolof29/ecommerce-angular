@@ -18,4 +18,18 @@ export class ProductsService{
         return this.httpClient.get(this.url);
     }
 
+    getProductById(id:number):Observable<any>{
+        console.log(this.url+id)
+        return this.httpClient.get(this.url+`/${id}/`);
+    }
+
+    getStoredProducts(){
+        return localStorage.getItem('product');
+    }
+
+    setStoreProduct(data:any){
+        const jsonData = JSON.stringify(data)
+        localStorage.setItem('product', jsonData);
+    }
+
 }
