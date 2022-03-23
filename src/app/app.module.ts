@@ -5,32 +5,29 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { AuthModule } from './auth/auth.module';
-import { LoginComponent } from './auth/login/login.component';
-import { DetailsComponent } from './products/details/details.component';
-import { ProductsComponent } from './products/products.component';
 import { FooterComponent } from './shared/layout/footer/footer.component';
 import { HeaderComponent } from './shared/layout/header/header.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { OrdersComponent } from './products/orders/orders.component';
+import { CartComponent } from './products/cart/cart.component';
+import { AdminComponent } from './admin/admin.component';
+import { ProductsModule } from './products/products.module';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    //borrar luego
-    LoginComponent,
-    ProductsComponent,
-    DetailsComponent,
-    OrdersComponent
+    CartComponent,
+    AdminComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     AuthModule,
+    ProductsModule,
     HttpClientModule,
-    FormsModule,
-    ReactiveFormsModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

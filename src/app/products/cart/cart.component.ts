@@ -1,13 +1,12 @@
 import { Component, OnInit } from "@angular/core";
-import { ProductItem } from "../model/product-item";
-import { ProductsService } from "../products.service";
+import { ProductsService } from "../service/products.service";
 
 @Component({
-    selector: 'orders',
-    templateUrl: './orders.component.html',
+    selector: 'cart',
+    templateUrl: './cart.component.html',
 })
 
-export class OrdersComponent implements OnInit{
+export class CartComponent implements OnInit{
 
     items!:any
 

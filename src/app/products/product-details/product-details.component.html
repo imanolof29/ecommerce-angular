@@ -1,0 +1,55 @@
+<div class="row mx-auto">
+    <div class="col-md-6">
+        <img class="img-fluid" src="{{product.image}}">
+    </div>
+    <div class="col-md-4 col-sm-5">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+                <h3>{{product.title}}</h3>
+            </li>
+            <li class="list-group-item">
+                <p>{{product.description}}</p>
+            </li>
+            <li class="list-group-item">
+                <div class="row">
+                    <div class="col">
+                        Price:
+                    </div>
+                    <div class="col">
+                        <p>{{product.price}}€</p>
+                    </div>
+                </div>
+            </li>
+            <li class="list-group-item">
+                <div class="row">
+                    <div class="col">
+                        Stock:
+                    </div>
+                    <div class="col">
+                        <p>{{product.stock}}</p>
+                    </div>
+                </div>
+            </li>
+            <li class="list-group-item">
+                <button [disabled]="!isInStock" class="btn btn-success">Add to cart</button>
+            </li>
+        </ul> 
+    </div>
+</div>
+<hr>
+<div class="row">
+    <h4>Comments</h4>
+    <div class="col-md-6">
+        <div class="card" *ngFor="let comment of product.comments">
+            <p>{{comment}}</p>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <form>
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">Leave a comment</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+        </form>
+    </div>
+</div>

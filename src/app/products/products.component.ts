@@ -1,6 +1,7 @@
-import { Component, EventEmitter, OnInit, Output } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
 import { Product } from "./model/product";
-import { ProductsService } from "./products.service";
+import { ProductsService } from "./service/products.service";
 
 
 @Component({
@@ -14,7 +15,7 @@ export class ProductsComponent implements OnInit{
     isLoading:boolean = false;
     error?:{}
 
-    constructor(private productsService:ProductsService){}
+    constructor(private productsService:ProductsService, private router:Router){}
 
     ngOnInit(): void {
         this.isLoading = true
@@ -29,7 +30,15 @@ export class ProductsComponent implements OnInit{
     }
 
     onSave(product:Product){
-        this.productsService.setStoreProduct(product)
+        const item = {
+            'product': product,
+            'quantity':1
+        }
+        this.productsService.setStoreProduct(item)
+    }
+
+    goToDetailsPage(id:number){
+        this.router.navigate(['products', id])
     }
 
 }
