@@ -5,5 +5,4 @@ export interface Product{
     image:string
     price:string
     stock:number
-    comments?:Comment[]
 }

@@ -1,14 +1,13 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
-import { AuthService } from "../service/auth.service";
-import { LoginRequest } from "../model/login-request";
-import { LocalStorageService } from "src/app/shared/service/local-storage.service";
+import { AuthService } from "../../service/auth.service";
+import { LoginRequest } from "../../model/login-request";
 import { Router } from "@angular/router";
 
 @Component({
     selector: 'login',
     templateUrl: './login.component.html',
-    styleUrls: ['../auth.component.scss']
+    styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit{
 
@@ -19,7 +18,7 @@ export class LoginComponent implements OnInit{
     public loginRequest!:LoginRequest
     public submited = false
 
-    constructor(private authService:AuthService, private formBuilder:FormBuilder, private localStorage:LocalStorageService, private router:Router){}
+    constructor(private authService:AuthService, private formBuilder:FormBuilder, private router:Router){}
 
     ngOnInit(): void {
         this.buildLoginForm()
@@ -37,8 +36,8 @@ export class LoginComponent implements OnInit{
         this.loginRequest = this.loginForm.value
         this.authService.login(this.loginRequest).subscribe(
             (res) => {
-                this.localStorage.setLocalStorage('token', res.access)
-                this.router.navigateByUrl('/products')
+                sessionStorage.setItem('token', res.access)
+                this.router.navigateByUrl('/')
             }
         )
     }

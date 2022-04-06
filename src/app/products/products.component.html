@@ -1,15 +1,12 @@
 <h1>Products</h1>
-<div class="row">
-  <div class="col-md-4" *ngFor="let product of products">
-    <div class="card my-3 p-3 rounded">
-      <img src="{{product.image}}">
-      <div class="card-body">
-        <p class="card-title">{{product.title}}</p>
-        <h3 class="card-text">{{product.price}}€</h3>
-        <hr>
-        <button class="btn btn-success" (click)="onSave(product)">Add to cart</button>
-        <a class="btn btn-outline-success" routerLink="['/products/', product.id]">View</a>
-      </div>
-    </div>
-  </div>
-</div>
+ <div class="row">
+   <div class="col-md-4" *ngFor="let product of products">
+     <div class="card my-3 p-3 rounded">
+       <img src="{{product.image}}">
+       <div class="card-body">
+         <p routerLink="/products/products/{{product.id}}" class="card-title">{{product.title}}</p>
+         <h3 class="card-text">{{product.price}}€</h3>
+         <button class="btn btn-success" (click)="onSave(product)">Add to cart</button>
+       </div>
+     </div>
+   </div>

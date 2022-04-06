@@ -1,0 +1,8 @@
+{
+    "login": {
+        "title": "Login",
+        "user": "Usuario",
+        "password": "Contraseña",
+        "not_registered": "¿Aun no estas registrado?"
+    }
+}

@@ -1,0 +1,8 @@
+{
+    "login": {
+        "title": "Login",
+        "user": "Erabiltzailea",
+        "password": "Pasahitza",
+        "not_registered": "Oraindik ez zara erregistratu?"
+    }
+}
